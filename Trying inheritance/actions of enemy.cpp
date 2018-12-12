@@ -21,3 +21,13 @@ double Thinker::attack() const
 	else
 		return Value_attack; 
 }
+
+double Boss :: attack() const
+{
+
+}
+
+double Boss::special_attack() const
+{
+
+}
