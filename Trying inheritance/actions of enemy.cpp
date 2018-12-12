@@ -3,7 +3,7 @@
 
 double Ninja :: attack() const 
 {
-	return Value_attack *(double)(attack_speed%100); 
+	return Value_attack *(attack_speed/10);
 }
 
 double Trasher::attack() const
@@ -30,4 +30,10 @@ double Boss :: attack() const
 double Boss::special_attack() const
 {
 	return Value_attack * dmg_factor; 
+}
+
+
+void Enemy::print_stats() const
+{
+	std::cout << "HP " << HP << std::endl <<"Attack " << Value_attack << std::endl << "Armor " << armor << std :: endl;
 }
