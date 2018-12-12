@@ -24,10 +24,10 @@ double Thinker::attack() const
 
 double Boss :: attack() const
 {
-
+	return Value_attack; 
 }
 
 double Boss::special_attack() const
 {
-
+	return Value_attack * dmg_factor; 
 }
