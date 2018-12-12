@@ -2,6 +2,7 @@
 class Enemy
 {
 protected: 
+	int lvl;
 	int HP; 
 	double Value_attack; 
 public:
