@@ -18,12 +18,18 @@
     <ClInclude Include="Enemy.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="actions of enemy.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Test.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="actions of hero.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
