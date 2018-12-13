@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "map.h"
 #include <iostream>
 #include <string>
 using namespace std; 
@@ -27,6 +28,8 @@ int main()
 	cout << "Damage " << trainig->attack() << endl; 
 	cout << "Special damage " << en4.special_attack() << endl;
 	trainig->print_stats();
-	system("pause"); 
+	map m1(1, 2);
+	m1.mapopen();
+	while (1);
 	return 0; 
 }
