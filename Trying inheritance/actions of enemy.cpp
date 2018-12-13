@@ -35,5 +35,5 @@ double Boss::special_attack() const
 
 void Enemy::print_stats() const
 {
-	std::cout << "HP " << HP << std::endl <<"Attack " << Value_attack << std::endl << "Armor " << armor << std :: endl;
+	std::cout <<"Name of enemy -> "<< Name << std :: endl <<"HP " << HP << std::endl <<"Attack " << Value_attack << std::endl << "Armor " << armor << std :: endl;
 }
