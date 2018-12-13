@@ -28,8 +28,6 @@ int main()
 	cout << "Damage " << trainig->attack() << endl; 
 	cout << "Special damage " << en4.special_attack() << endl;
 	trainig->print_stats();
-	map m1(1, 2);
-	m1.mapopen();
-	while (1);
+	
 	return 0; 
 }
