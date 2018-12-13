@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "Hero.h"
 #include <iostream>
 #include <string>
 using namespace std; 
@@ -23,6 +24,24 @@ int main()
 	trainig->print_stats();
 	cout << "Damage " << trainig->attack() << endl; 
 	cout << "Special damage " << en4.special_attack() << endl;
+	string name; 
+	cout << "Character Name"; 
+	cin >> name; 
+	Hero hero(name); 
+	hero.print_info();
+	cout << hero.attack() << endl; 
+	hero.damage_hero(10);
+	cout << "Damaged" << endl; 
+	hero.print_info(); 
+	hero.heal(15); 
+	cout << "Heal" << endl; 
+	hero.print_info(); 
+	cout << "Stamina is gone"<< endl; 
+	hero.stamina_consumption(); 
+	hero.print_info(); 
+	cout << "Stamina regen" << endl; 
+	hero.stamina_regen(60); 
+	hero.print_info(); 
 	system("pause"); 
 	return 0; 
 }

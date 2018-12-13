@@ -5,10 +5,10 @@
 protected:
 	std :: string Name;
 	int HP; 
-	int armor; 
+	int Armor; 
 	double Value_attack; 
 public:
-	Enemy(int s = 0, double value = 0, int a = 0) : HP(s), Value_attack(value), armor(a) {Name = "0";};
+	Enemy(int s = 0, double value = 0, int a = 0) : HP(s), Value_attack(value), Armor(a) {Name = "0";};
 	~Enemy() {};
 	virtual double attack() const =0 ; 
     void print_stats() const; 
@@ -35,6 +35,7 @@ public:
 	
 };
 
+
 class Thinker : public Enemy
 {
 	double crit_chance; 
@@ -46,6 +47,7 @@ public:
 	
 };
 
+
 class Boss : public Enemy 
 {
 	int hp_factor; 
@@ -55,5 +57,4 @@ public:
 	~Boss() {};
 	double attack() const; 
 	double special_attack() const; 
-	
 };
