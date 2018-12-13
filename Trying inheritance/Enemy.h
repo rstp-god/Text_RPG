@@ -12,6 +12,7 @@ public:
 	~Enemy() {};
 	virtual double attack() const =0 ; 
     void print_stats() const; 
+	void damage(double);
 };
 
 class Ninja : public Enemy 
@@ -20,8 +21,7 @@ class Ninja : public Enemy
 public:
 	Ninja(int s = 0, double value = 0, double k = 0, int a = 0) : Enemy(s, value, a), attack_speed(k) { Name = "Ninja";};
 	~Ninja() {};
-	double attack() const; 
-	
+	double attack() const;  
 };
 
 
@@ -32,7 +32,6 @@ public:
 	Trasher(int s = 0, double value = 0, int k = 1, int a = 0) : Enemy(s, value, a), force_factor(k) { Name = "Trasher";};
 	~Trasher() {};
 	double attack() const;
-	
 };
 
 
@@ -44,7 +43,6 @@ public:
 	Thinker(int s = 0, double value = 0, int k = 1, double c = 1, int a = 0) : Enemy(s, value, a), crit_factor(k), crit_chance(c) { Name = "Thinker";};
 	~Thinker() {};
 	double attack() const; 
-	
 };
 
 

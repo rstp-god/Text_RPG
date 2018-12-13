@@ -12,7 +12,7 @@
 
 Hero::Hero(std :: string name)
 {
-	Name = ""; 
+	Name = name; 
 	HP = hp; 
 	Armor = armor; 
 	Stamina = stamina; 
@@ -92,7 +92,7 @@ void Hero::stamina_regen(int regen)
 
 void Hero::damage_hero(double dmg)
 {
-	HP -=(int)dmg*(Armor/100); 
+	HP -=(int)dmg; 
 }
 
 void Hero::stamina_consumption()

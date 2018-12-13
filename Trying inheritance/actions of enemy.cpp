@@ -37,3 +37,8 @@ void Enemy::print_stats() const
 {
 	std::cout <<"Name of enemy -> "<< Name << std :: endl <<"HP " << HP << std::endl <<"Attack " << Value_attack << std::endl << "Armor " << Armor << std :: endl;
 }
+
+void Enemy::damage(double dmg)
+{
+	HP -= dmg; 
+}
