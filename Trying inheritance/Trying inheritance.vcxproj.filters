@@ -21,6 +21,9 @@
     <ClInclude Include="Hero.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="actions of enemy.cpp">
@@ -30,6 +33,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="actions of hero.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="map.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
