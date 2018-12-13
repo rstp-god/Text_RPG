@@ -28,6 +28,5 @@ int main()
 	cout << "Damage " << trainig->attack() << endl; 
 	cout << "Special damage " << en4.special_attack() << endl;
 	trainig->print_stats();
-	
 	return 0; 
 }
