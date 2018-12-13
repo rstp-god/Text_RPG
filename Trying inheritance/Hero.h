@@ -1,41 +1,46 @@
+#include <string>  
 #pragma once
-class hero
+#define number_quests  1
+struct Quest
 {
-protected:
-	int lvl;
-	double HP;
-	double Value_attack;
-public:
-	hero(int s = 0, double value = 0) :HP(s), Value_attack(value) {};
-	~hero();
-	virtual double attack() = 0;
+	bool complete; 
+    std::string description;
+	double reward; 
+    //exp thinking
 };
 
-class Ninja : public hero
+struct Reputation
 {
-	int attack_speed;
-public:
-	Ninja(int s = 0, double value = 0, int k = 1) : hero(s, value), attack_speed(k) {};
-	~Ninja();
-	double attack() const;
+	unsigned int law; 
+	unsigned int Karma;
+	unsigned int rogue_respect;
 };
 
-
-class Trasher :public hero
+class Hero
 {
-	int force_factor;
+private: 
+	std::string Name; 
+	int HP; 
+	int Armor; 
+	int Stamina; 
+	int Money;
+	int coordinate[2]; 
+	double Value_attack; 
+	bool Partner;
+	Reputation gamer; 
+	Quest quests[number_quests]; 
+	//Profession
+	//equipment 
 public:
-	Trasher(int s = 0, double value = 0, int k = 1) : hero(s, value), force_factor(k) {};
-	~Trasher();
-	double attack() const;
-};
-
-class Thinker : public hero
-{
-	double crit_chance;
-	int crit_factor;
-public:
-	Thinker(int s = 0, double value = 0, int k = 1, double c = 1) : hero(s, value), crit_factor(k), crit_chance(c) {};
-	~Thinker();
-	double attack() const;
+	Hero(std::string);
+	~Hero() {};
+	void print_info() const; 
+	double attack() const; 
+	void heal(int); 
+	int coordinate_x() const; //combine in 1 func()
+	int coordinate_y() const; 
+	void stamina_regen(int); 
+	bool Speak() const; 
+	void damage_hero(double); 
+	void stamina_consumption(); 
 };
