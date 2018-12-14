@@ -1,4 +1,5 @@
 #pragma once
+#include <windows.h>
 #include <cmath>
 #include <limits.h>
 #include <string>
@@ -50,6 +51,98 @@ private:
 	int current_positiony;
 
 public:
+	void traveling()
+	{
+		int loading = 0;
+		int randomcount = 0;
+		char *a;
+		int n, m;
+		m = 50;
+		n = 150;
+		int flag = 1;
+		a = (char*)malloc(m*n * sizeof(char));
+		for (int i = 0; i < m; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+
+				*(a + i * n + j) = ' ';
+				if (j == 0 || j == 149)
+				{
+					*(a + i * n + j) = '|';
+				}
+				if (i == 0 || i == 49)
+				{
+					*(a + i * n + j) = '-';
+				}
+				if (j == 0 && i == 0)
+				{
+					*(a + i * n + j) = '+';
+				}
+				if (j == 0 && i == 49)
+				{
+					*(a + i * n + j) = '+';
+				}
+				if (j == 149 && i == 0)
+				{
+					*(a + i * n + j) = '+';
+				}
+				if (j == 149 && i == 49)
+				{
+					*(a + i * n + j) = '+';
+				}
+			}
+		}
+		for (int travel = 30; travel < 120; travel=travel+3)
+		{
+			*(a + 40 * n + 29) = 'O';
+			*(a + 40 * n + travel) = '-';
+			*(a + 40 * n + travel+1) = '-';
+			*(a + 40 * n + travel+2) = '-';
+			*(a + 39 * n + 122) = '|';
+			*(a + 41 * n + 122) = '|';
+			*(a + 40 * n + 122) = '+';
+			*(a + 40 * n + 120) = '-';
+			*(a + 40 * n + 121) = '-';
+			*(a + 40 * n + 123) = '-';
+			*(a + 40 * n + 124) = '-';
+			system("cls");
+			for (int i = 0; i < m; i++)
+			{
+				for (int j = 0; j < n; j++)
+				{
+					cout << *(a + i * n + j);
+				}
+				cout << endl;
+			}
+			switch (loading)
+			{
+			case 0:
+				{
+					cout << "traveling." << endl;
+					loading = 1;
+					break;
+				}
+			case 1:
+				{
+					cout << "traveling.." << endl;
+					loading = 2;
+					break;
+				}
+			case 2:
+				{
+					cout << "traveling..." << endl;
+					loading = 0;
+					break;
+				}
+			default:
+				loading = 0;
+				break;
+			}
+			Sleep(500);
+		}
+		free(a);
+	}
 	map() {};
 	map(int currpossx,int currpossy)
 	{ 
@@ -218,6 +311,7 @@ public:
 						{
 							current_positionx = cities[cities[i].neighbours[num]].posx;
 							current_positiony = cities[cities[i].neighbours[num]].posy;
+							traveling();
 							num = 0;
 							flag = 1;
 							system("cls");
