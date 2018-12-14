@@ -13,8 +13,7 @@ int main()
 	b = 20;
 	map m1(a,b);
 	m1.mapopen();
-	while (1);
-
+	return 0;
 	/*Enemy *training;
 	Ninja en1(1, 10, 2, 1);
 	training = &en1;
