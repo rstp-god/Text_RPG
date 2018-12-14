@@ -16,6 +16,15 @@ struct Reputation
 	unsigned int rogue_respect;
 };
 
+
+struct Characteristic   
+{
+	double acc_procent; 
+	double head_procent; 
+	int hp_heal; 
+	unsigned int eloquence; 
+};
+
 class Hero
 {
 private: 
@@ -29,6 +38,7 @@ private:
 	bool Partner;
 	Reputation gamer; 
 	Quest quests[number_quests]; 
+	Characteristic hero_ch; 
 	//Profession
 	//equipment 
 public:
@@ -43,4 +53,6 @@ public:
 	bool Speak() const; 
 	void damage_hero(double); 
 	void stamina_consumption(); 
+	void characteristic_up();
+	void elquence_up(); 
 };

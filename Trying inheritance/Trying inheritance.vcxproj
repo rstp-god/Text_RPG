@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Hero.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="micromap.h" />
   </ItemGroup>

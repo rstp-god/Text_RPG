@@ -5,8 +5,8 @@
 #define armor 10
 #define stamina 120
 #define money 0
-#define x 0   //coordinate
-#define y 0   //coordinate 
+#define x 15  //coordinate
+#define y 20  //coordinate 
 #define partner false
 #define value 15
 
