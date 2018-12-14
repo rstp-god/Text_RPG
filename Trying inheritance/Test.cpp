@@ -1,3 +1,4 @@
+#include "map.h"
 #include "Enemy.h"
 #include "Hero.h"
 #include <iostream>
@@ -6,7 +7,14 @@ using namespace std;
 
 int main()
 {
-	Enemy *training;
+	int a, b;
+	a = 15;
+	b = 20;
+	map m1(a,b);
+	m1.mapopen();
+	while (1);
+
+	/*Enemy *training;
 	Ninja en1(1, 10, 2, 1);
 	training = &en1;
 	training->print_stats();
@@ -50,5 +58,5 @@ int main()
 	training->damage(hero.attack());
 	training->print_stats();
 	system("pause");
-	return 0;
+	return 0;*/
 }
