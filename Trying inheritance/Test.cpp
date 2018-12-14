@@ -1,6 +1,7 @@
 #include "map.h"
 #include "Enemy.h"
 #include "Hero.h"
+#include "map.h"
 #include <iostream>
 #include <string>
 using namespace std;
