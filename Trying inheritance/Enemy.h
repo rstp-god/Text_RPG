@@ -13,6 +13,7 @@ public:
 	virtual double attack() const =0 ; 
     void print_stats() const; 
 	void damage(double);
+	int get_hp(); 
 };
 
 class Ninja : public Enemy  //fast gunner

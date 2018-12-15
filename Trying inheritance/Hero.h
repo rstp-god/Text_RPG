@@ -1,30 +1,7 @@
-#include <string>  
+#include "Item.h"
+#include "Struct.h"
 #pragma once
 #define number_quests  1
-struct Quest
-{
-	int id; 
-	bool complete; 
-    std::string description;
-	double reward; 
-    //exp thinking
-};
-
-struct Reputation
-{
-	unsigned int law; 
-	unsigned int Karma;
-	unsigned int rogue_respect;
-};
-
-
-struct Characteristic   
-{
-	double acc_procent; 
-	double head_procent; 
-	int hp_heal; 
-	unsigned int eloquence; 
-};
 
 class Hero
 {
@@ -39,10 +16,10 @@ private:
 	bool Partner;
 	Reputation gamer; 
 	Quest quests[number_quests]; 
-	Characteristic hero_ch; 
+	//Characteristic hero_ch;  
 	//Profession
-	//equipment 
 public:
+	Equipment main_eq;
 	Hero(std::string);
 	~Hero() {};
 	void print_info() const; 
@@ -57,4 +34,12 @@ public:
 	void characteristic_up();
 	void elquence_up(); 
 	void sleep(double,double);
+	void equipment_fill(); 
+	void equipment_show();
+	void equipment_heal_show(); 
+	void equipment_weapon_show();
+	void equipment_ammo_show(); 
+	void equipment_alcohol_show(); 
+	void equipment_food_show(); 
+	int get_hp(); 
 };
