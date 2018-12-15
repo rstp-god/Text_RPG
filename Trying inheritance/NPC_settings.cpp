@@ -104,15 +104,15 @@ NPC_Class::NPC_Class(std::string city_name, std::string NPC_Name) {};
 	}
 
 
-	void Quest_NPC::NPC_choice(int id_NPC,Quest id) {
-		std::cin >> id_NPC;
-		switch(id_NPC){
+	void Quest_NPC::NPC_choice() {
+		std::cin >> id;
+		switch(id){
 		case 1:
 			std::cout << "Quest_menu1" << std ::endl;
 			std::cout << "Quest1" << std::endl;
 			std::cout << "Quest2" << std::endl;
 			std::cout << "Quest3" << std::endl;
-			switch (id.id) {
+			switch (id) {
 			case 1:
 				std::cout << "Quest1";
 			case 2:
@@ -126,7 +126,7 @@ NPC_Class::NPC_Class(std::string city_name, std::string NPC_Name) {};
 			std::cout << "Quest1" << std::endl;
 			std::cout << "Quest2" << std::endl;
 			std::cout << "Quest3" << std::endl;
-			switch (id.id) {
+			switch (id) {
 			case 1:
 				std::cout << "Quest1";
 			case 2:
@@ -140,7 +140,7 @@ NPC_Class::NPC_Class(std::string city_name, std::string NPC_Name) {};
 			std::cout << "Quest1" << std::endl;
 			std::cout << "Quest2" << std::endl;
 			std::cout << "Quest3" << std::endl;
-			switch (id.id) {
+			switch (id) {
 			case 1:
 				std::cout << "Quest1";
 			case 2:

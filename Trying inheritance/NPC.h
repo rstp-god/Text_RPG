@@ -21,10 +21,10 @@ class Quest_NPC :public NPC_Class
 {
 protected:
 	int id;
+	Quest one;
 public:
 	Quest_NPC() {};
 	Quest_NPC(int,std::string,std::string,Quest){};
-	Quest id;
-	void NPC_choice(int,Quest);
+	void NPC_choice();
 	void NPC_Quests_list() {};
 };
