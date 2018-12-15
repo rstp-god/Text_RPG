@@ -148,6 +148,7 @@ void Hero:: equipment_heal_show()
 	std::cout << "Heal Items : " << std::endl;
 	for (int i = 0; i < number_of_heal_items; i++)
 	{
+		std::cout << i << ")" << std::endl;
 		std::cout << main_eq.eq1[i];
 		std::cout << std::endl;
 	}
@@ -157,7 +158,7 @@ void Hero::equipment_weapon_show()
 	std::cout << "Weapons : " << std::endl;
 	for (int i = 0; i < number_of_weapons; i++)
 	{
-		std::cout << i; 
+		std::cout << i << ")" << std::endl; 
 		std::cout << main_eq.eq2[i];
 		std::cout << std::endl;
 	}
@@ -167,6 +168,7 @@ void Hero::equipment_ammo_show()
 	std::cout << "Ammo : " << std::endl;
 	for (int i = 0; i < number_type_of_ammo; i++)
 	{
+		std::cout << i << ")" << std::endl;
 		std::cout << main_eq.eq3[i];
 		std::cout << std::endl;
 	}
@@ -176,6 +178,7 @@ void Hero::equipment_alcohol_show()
 	std::cout << "Alcohol : " << std::endl;
 	for (int i = 0; i < number_type_of_alcohol; i++)
 	{
+		std::cout << i << ")" << std::endl;
 		std::cout << main_eq.eq4[i];
 		std::cout << std::endl;
 	}
@@ -185,6 +188,7 @@ void Hero::equipment_food_show()
 	std::cout << "Food : " << std::endl;
 	for (int i = 0; i < number_type_of_food; i++)
 	{
+		std::cout << i << ")" << std::endl;
 		std::cout << main_eq.eq5[i];
 		std::cout << std::endl;
 	}

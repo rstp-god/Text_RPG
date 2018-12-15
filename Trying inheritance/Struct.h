@@ -5,6 +5,7 @@
 #define number_type_of_ammo 2
 #define number_type_of_alcohol 3
 #define number_type_of_food 9
+
 struct Quest
 {
 	int id;
