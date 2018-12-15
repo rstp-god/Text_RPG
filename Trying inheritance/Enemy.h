@@ -35,7 +35,7 @@ public:
 };
 
 
-class Thinker : public Enemy 
+class Thinker : public Enemy //knife thrower
 {
 	double crit_chance; 
 	int crit_factor; 

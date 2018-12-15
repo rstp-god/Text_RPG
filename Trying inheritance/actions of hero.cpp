@@ -1,7 +1,7 @@
 #include "Hero.h"
 #include <string>
 #include <iostream>
-#define hp 100
+#define hp 90
 #define armor 10
 #define stamina 120
 #define money 0
@@ -55,9 +55,9 @@ void Hero::print_info() const
 	}
 }
 
-double Hero::attack() const
+double Hero::attack(double dmg) const
 {
-	return Value_attack; 
+	return Value_attack+dmg; 
 }
 
 void Hero::heal(int heal_value) 
@@ -82,7 +82,7 @@ int Hero::coordinate_y() const
 
 void Hero::stamina_regen(int regen)
 {
-	if (Stamina += regen > 120)
+	if (Stamina + regen >= 120)
 	{
 		Stamina = 120;
 	}

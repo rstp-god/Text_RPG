@@ -124,6 +124,7 @@
   <ItemGroup>
     <ClCompile Include="actions of enemy.cpp" />
     <ClCompile Include="actions of hero.cpp" />
+    <ClCompile Include="Item Settings.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

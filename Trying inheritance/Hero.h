@@ -3,6 +3,7 @@
 #define number_quests  1
 struct Quest
 {
+	int id; 
 	bool complete; 
     std::string description;
 	double reward; 
@@ -45,7 +46,7 @@ public:
 	Hero(std::string);
 	~Hero() {};
 	void print_info() const; 
-	double attack() const; 
+	double attack(double) const; 
 	void heal(int); 
 	int coordinate_x() const; //combine in 1 func()
 	int coordinate_y() const; 
@@ -55,4 +56,5 @@ public:
 	void stamina_consumption(); 
 	void characteristic_up();
 	void elquence_up(); 
+	void sleep(double,double);
 };
