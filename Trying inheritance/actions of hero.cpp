@@ -55,6 +55,141 @@ void Hero::print_info() const
 	}
 }
 
+void Hero::equipment_fill()
+{
+	// fill heal mas
+	Bandages h1;
+	First_aid_kit h2;
+	Tincute h3; 
+	main_eq.eq1[0] = h1;
+	main_eq.eq1[1] = h2; 
+	main_eq.eq1[2] = h3; 
+	//fill weapon mas
+	Revolver w1; 
+	Rifle w2; 
+	Knife w3;
+	main_eq.eq2[0] = w1; 
+	main_eq.eq2[1] = w2;
+	main_eq.eq2[2] = w3;
+	//fill Ammo mas
+	Revolver_ammo a1; 
+	Rifle_ammo a2; 
+	main_eq.eq3[0] = a1; 
+	main_eq.eq3[1] = a2;
+	//fill Alcohol mas
+	Whiskey al1; 
+	Tequila al2; 
+	Beer al3; 
+	main_eq.eq4[0] = al1; 
+	main_eq.eq4[1] = al2;
+	main_eq.eq4[2] = al3;
+	//fill Food mas
+	Chiken f1; 
+	Jerky f2; 
+	Bread f3; 
+	Apple f4; 
+	Pear f5;
+	Banana f6; 
+	Onion f7; 
+	Tomate f8; 
+	Cucumber f9; 
+	main_eq.eq5[0] = f1; 
+	main_eq.eq5[1] = f2;
+	main_eq.eq5[2] = f3;
+	main_eq.eq5[3] = f4;
+	main_eq.eq5[4] = f5;
+	main_eq.eq5[5] = f6;
+	main_eq.eq5[6] = f7;
+	main_eq.eq5[7] = f8;
+	main_eq.eq5[8] = f9;
+}
+
+void Hero::equipment_show()
+{
+	std::cout << "Heal Items : " << std::endl;
+	for (int i = 0; i < number_of_heal_items; i++)
+	{
+		std::cout << main_eq.eq1[i]; 
+		std::cout << std::endl; 
+	}
+	std :: cout << std :: endl; 
+	std :: cout << "Weapons : " << std :: endl; 
+	for (int i = 0; i < number_of_weapons; i++)
+	{
+		std::cout << main_eq.eq2[i];
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << "Ammo : " << std::endl; 
+	for (int i = 0; i < number_type_of_ammo; i++)
+	{
+		std::cout << main_eq.eq3[i];
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << "Alcohol : " << std::endl;
+	for (int i = 0; i < number_type_of_alcohol; i++)
+	{
+		std::cout << main_eq.eq4[i];
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << "Food : " << std::endl;
+	for (int i = 0; i < number_type_of_food; i++)
+	{
+		std::cout << main_eq.eq5[i];
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+}
+
+void Hero:: equipment_heal_show()
+{
+	std::cout << "Heal Items : " << std::endl;
+	for (int i = 0; i < number_of_heal_items; i++)
+	{
+		std::cout << main_eq.eq1[i];
+		std::cout << std::endl;
+	}
+}
+void Hero::equipment_weapon_show()
+{
+	std::cout << "Weapons : " << std::endl;
+	for (int i = 0; i < number_of_weapons; i++)
+	{
+		std::cout << i; 
+		std::cout << main_eq.eq2[i];
+		std::cout << std::endl;
+	}
+}
+void Hero::equipment_ammo_show()
+{
+	std::cout << "Ammo : " << std::endl;
+	for (int i = 0; i < number_type_of_ammo; i++)
+	{
+		std::cout << main_eq.eq3[i];
+		std::cout << std::endl;
+	}
+}
+void Hero::equipment_alcohol_show()
+{
+	std::cout << "Alcohol : " << std::endl;
+	for (int i = 0; i < number_type_of_alcohol; i++)
+	{
+		std::cout << main_eq.eq4[i];
+		std::cout << std::endl;
+	}
+}
+void Hero::equipment_food_show()
+{
+	std::cout << "Food : " << std::endl;
+	for (int i = 0; i < number_type_of_food; i++)
+	{
+		std::cout << main_eq.eq5[i];
+		std::cout << std::endl;
+	}
+}
+
 double Hero::attack(double dmg) const
 {
 	return Value_attack+dmg; 
@@ -98,6 +233,11 @@ void Hero::damage_hero(double dmg)
 void Hero::stamina_consumption()
 {
 	Stamina -= 50; 
+}
+
+int Hero::get_hp()
+{
+	return HP; 
 }
 
 

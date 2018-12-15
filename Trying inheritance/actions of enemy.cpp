@@ -42,3 +42,8 @@ void Enemy::damage(double dmg)
 {
 	HP -= dmg; 
 }
+
+int Enemy::get_hp()
+{
+	return HP; 
+}

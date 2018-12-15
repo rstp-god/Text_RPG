@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 #pragma once
 
 class Item
@@ -23,20 +24,27 @@ food - chiken,vyalinoe_myaso,bread,apple,pear,banana,onion,tomate,cucumber
 
 class Heal_items : public Item
 {
-	int number; 
-	std::string Name; 
-	int heal_value; 
+	int number;
+	std::string Name;
+	int heal_value;
 	double time_usage;
 	int price;
 public:
+	Heal_items() {}; 
 	Heal_items(std::string,int,int,int,double);
 	~Heal_items();
 	int use();
 	void add(); 
+	friend std :: ostream & operator << (std :: ostream & , const Heal_items &);
+	void print_name(); 
+	void print_number();
+	void print_heal_value(); 
+	void print_time_usage(); 
+	void print_price(); 
 };
 
 
-class Bandages : public Heal_items
+class Bandages : public Heal_items  
 {
 public:
 	Bandages();
@@ -44,14 +52,14 @@ public:
 };
 
 
-class First_aid_kit :public Heal_items
+class First_aid_kit :public Heal_items 
 {
 public:
 	First_aid_kit();
 	~First_aid_kit();
 };
 
-class Tincute : public Heal_items
+class Tincute : public Heal_items 
 {
 public:
 	Tincute();
@@ -61,32 +69,35 @@ public:
 
 //weapon 
 
-class Weapon :public Item
+class Weapon :public Item 
 {
 	std::string Name; 
 	double additional_dmg; 
 	short int ammo_type; 
+	int price; 
 public:
-	Weapon(std::string,double,short int);
+	Weapon() {}
+	Weapon(std::string, double, short int,int);
 	~Weapon();
 	double dmg_add(); 
+	friend std::ostream & operator << (std::ostream &, const Weapon &);
 };
 
-class Revolver : public Weapon
+class Revolver : public Weapon 
 {
 public:
 	Revolver();
 	~Revolver();
 };
 
-class Rifle : public Weapon
+class Rifle : public Weapon 
 {
 public:
 	Rifle();
 	~Rifle();
 };
 
-class Knife :public Weapon
+class Knife :public Weapon 
 {
 public:
 	Knife();
@@ -97,17 +108,20 @@ public:
 
 class Ammo :public Item
 {
-	std::string Name; 
-	int number; 
-	short int type; 
+	std::string Name;
+	int number;
+	short int type;
+	int price; 
 public:
-	Ammo (std ::string,int,short int);
+	Ammo() {}; 
+	Ammo (std ::string,int,short int,int);
 	~Ammo ();
 	void ammo_add(); 
 	void ammo_minus(); 
+	friend std::ostream & operator << (std::ostream &, const Ammo &);
 };
 
-class Revolver_ammo :public Ammo
+class Revolver_ammo :public Ammo 
 {
 public:
 	Revolver_ammo();
@@ -127,27 +141,30 @@ class Alcohol :public Item
 {
 	std::string Name; 
 	double spirt_procent; 
+	int price;
 public:
-	Alcohol(std::string,double);
+	Alcohol() {}; 
+	Alcohol(std::string,double,int);
 	~Alcohol();
-	double use(); 
+	int use(); 
+	friend std::ostream & operator << (std::ostream &, const Alcohol &);
 };
 
-class Whiskey :public Alcohol
+class Whiskey :public Alcohol 
 {
 public:
 	Whiskey();
 	~Whiskey();
 };
 
-class Tequila : public Alcohol
+class Tequila : public Alcohol 
 {
 public:
 	Tequila();
 	~Tequila();
 };
 
-class Beer :public Alcohol
+class Beer :public Alcohol 
 {
 public:
 	Beer();
@@ -174,11 +191,14 @@ class Food : public Item
 	int Stamina_regen_value; 
 	double time_usage;
 	int number; 
+	int price; 
 public:
-	Food(std::string,int,double,int);
+	Food() {}
+	Food(std::string,int,double,int,int);
 	~Food();
 	int use(); 
 	void food_add(); 
+	friend std::ostream & operator << (std::ostream &, const Food &);
 };
 
 class Chiken :public Food
@@ -230,14 +250,14 @@ public:
 	~Onion();
 };
 
-class Tomate :public Food
+class Tomate :public Food 
 {
 public:
 	Tomate();
 	~Tomate();
 };
 
-class Cucumber : public Food
+class Cucumber : public Food 
 {
 public: 
 	Cucumber(); 

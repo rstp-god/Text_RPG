@@ -120,6 +120,7 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="micromap.h" />
+    <ClInclude Include="Struct.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="actions of enemy.cpp" />
