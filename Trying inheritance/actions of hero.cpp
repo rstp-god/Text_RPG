@@ -1,7 +1,8 @@
 #include "Hero.h"
 #include <string>
 #include <iostream>
-#define hp 90
+
+#define hp 100
 #define armor 10
 #define stamina 120
 #define money 0
