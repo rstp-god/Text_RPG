@@ -8,10 +8,9 @@ using namespace std;
 
 int main()
 {
-	int a, b;
-	a = 15;
-	b = 20;
-	map m1(a,b);
+
+	Hero gamer("Savage"); 
+	map m1(gamer.coordinate_x(), gamer.coordinate_y());
 	m1.mapopen();
 	return 0;
 	/*Enemy *training;

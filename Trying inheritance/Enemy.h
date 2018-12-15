@@ -15,7 +15,7 @@ public:
 	void damage(double);
 };
 
-class Ninja : public Enemy 
+class Ninja : public Enemy  //fast gunner
 {
 	double attack_speed; 
 public:
@@ -25,7 +25,7 @@ public:
 };
 
 
-class Trasher  :public Enemy
+class Trasher  :public Enemy //accurate gunner
 {
 	int force_factor; 
 public:
@@ -35,7 +35,7 @@ public:
 };
 
 
-class Thinker : public Enemy
+class Thinker : public Enemy 
 {
 	double crit_chance; 
 	int crit_factor; 
@@ -45,8 +45,8 @@ public:
 	double attack() const; 
 };
 
-
-class Boss : public Enemy 
+ 
+class Boss : public Enemy   //nechto srednee 
 {
 	int hp_factor; 
 	int dmg_factor; 
