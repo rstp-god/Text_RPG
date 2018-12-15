@@ -312,6 +312,7 @@ public:
 						cout << endl;
 						if (num == 9||num>=cities[i].numlock)
 						{
+
 							flag = 0;
 						}
 						else
