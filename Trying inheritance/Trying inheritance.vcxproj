@@ -120,12 +120,14 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="micromap.h" />
+    <ClInclude Include="NPC.h" />
     <ClInclude Include="Struct.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="actions of enemy.cpp" />
     <ClCompile Include="actions of hero.cpp" />
     <ClCompile Include="Item Settings.cpp" />
+    <ClCompile Include="NPC_settings.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
