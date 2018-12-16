@@ -22,6 +22,7 @@ mainmenu:
 		cout << "3)Fight w8 ninja!" << endl;
 		cout << "4)Exit game!" << endl; 
 		cin >> mainmenuchoise;
+		system("cls");
 		switch (mainmenuchoise)
 		{
 		case 1:
@@ -35,6 +36,7 @@ mainmenu:
 				cout << "5)Food items see" << endl;
 				cout << "6)Exit to main menu" << endl;
 				cin >> choise;
+				system("cls");
 				switch (choise)
 				{
 				case 1:
@@ -53,7 +55,8 @@ mainmenu:
 					gamer.equipment_food_show();
 					break;
 				case 6:
-					goto mainmenu; 
+					goto mainmenu;
+					system("cls");
 					break;
 				default:
 					break;
@@ -62,9 +65,11 @@ mainmenu:
 			break;
 		case 2:
 			m1.mapopen();
+			system("cls");
 			break;
 		case 3:
 			int fightchoise;
+			system("cls");
 			while (true)
 			{
 			fightmenu:
@@ -140,7 +145,10 @@ mainmenu:
 					}
 				}
 				else
-    				goto fightmenu;
+				{
+					goto fightmenu;
+					system("cls");
+				}
 			}
 			break;
 		case 4: 

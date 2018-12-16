@@ -1,13 +1,89 @@
 #pragma once
+//#include "micromap.h"
 #include <stdlib.h>;
 #include <time.h>
 #include <windows.h>
 #include <cmath>
 #include <limits.h>
 #include <string>
+#include <fstream>
 #include <iostream>
 
 using namespace std;
+class cityhall
+{
+private:
+	int type;
+public:
+
+	cityhall(int citytype)
+	{
+		type = citytype;
+	}
+	void built()
+	{
+		system("cls");
+		int stop = 1;
+		string path1 = "city1.txt";
+		string path2 = "city2.txt";
+		string path3 = "city3.txt";
+		ifstream fin;
+		char *a;
+		int n, m;
+		m = 50;
+		n = 150;
+		int flag = 1;
+		a = (char*)malloc(m*n * sizeof(char));
+		while(stop!=0)
+		switch (type)
+		{
+		case 1:
+		{
+			fin.open(path1);
+			string str;
+			/*for (int i = 0; i < m; i++)
+			{
+				for (int j = 0; j < n; j++)
+				{
+					fin.get(ch);
+					*(a + i * n + j) = ch;
+
+				}
+			}
+			for (int i = 0; i < m; i++)
+			{
+				for (int j = 0; j < n; j++)
+				{
+					cout << *(a + i * n + j);
+				}
+				cout << endl;
+			}*/
+			while (!fin.eof())
+			{
+				str = "";
+				getline(fin, str);
+				cout << str << endl;
+			}
+			cin >> stop;
+			break;
+		}
+		case 2:
+		{
+			fin.open(path2);
+			break;
+		}
+		case 3:
+		{
+			fin.open(path3);
+			break;
+		}
+		default:
+			break;
+		}
+		free(a);
+		fin.close();
+	}
+};
 class city
 {
 protected:
@@ -300,6 +376,8 @@ public:
 						int count = 0;
 						int num = 0;
 						int j = 0;
+						cout << "if u wanna enter to the city- press 8" << endl;
+						cout << "-------------------------" << endl;
 						cout << "where do u wanna travel?|" << endl;
 						cout << "-------------------------" << endl;
 						for (int j = 0; j < cities[i].numlock; j++)
@@ -310,9 +388,16 @@ public:
 						cout << "if u wanna exit - press 9" << endl;
 						cin >> num;
 						cout << endl;
+						if (num == 8)
+						{
+							cityhall entering(cities[i].type);
+							entering.built();
+							flag = 1;
+							system("cls");
+							break;
+						}
 						if (num == 9||num>=cities[i].numlock)
 						{
-
 							flag = 0;
 						}
 						else
