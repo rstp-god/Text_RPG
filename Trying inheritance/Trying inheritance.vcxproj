@@ -119,7 +119,6 @@
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="map.h" />
-    <ClInclude Include="micromap.h" />
     <ClInclude Include="Struct.h" />
   </ItemGroup>
   <ItemGroup>
