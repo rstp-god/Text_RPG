@@ -22,6 +22,7 @@ public:
 	}
 	void built()
 	{
+		int house = 10;
 		system("cls");
 		int stop = 1;
 		string path1 = "city1.txt";
@@ -47,7 +48,23 @@ public:
 				getline(fin, str);
 				cout << str << endl;
 			}
-			cin >> stop;
+			cout << "enter number of building" << endl;
+			cout << "-------------------------" << endl << "press 0 to exit" << endl;
+			cin >>house;
+			while (house)
+			{
+				system("cls");
+				switch (house)
+				{
+				case 1:
+				{
+
+				}
+				default:
+					break;
+				}
+			}
+			stop = 0;
 			break;
 		}
 		case 2:
@@ -60,7 +77,7 @@ public:
 				getline(fin, str);
 				cout << str << endl;
 			}
-			cin >> stop;
+			stop = 0;
 			break;
 		}
 		case 3:
@@ -73,7 +90,7 @@ public:
 				getline(fin, str);
 				cout << str << endl;
 			}
-			cin >> stop;
+			stop = 0;
 			break;
 		}
 		default:
