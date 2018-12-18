@@ -1,5 +1,5 @@
 #pragma once
-//#include "micromap.h"
+#include <windows.h>
 #include <stdlib.h>;
 #include <time.h>
 #include <windows.h>
@@ -41,23 +41,6 @@ public:
 		{
 			fin.open(path1);
 			string str;
-			/*for (int i = 0; i < m; i++)
-			{
-				for (int j = 0; j < n; j++)
-				{
-					fin.get(ch);
-					*(a + i * n + j) = ch;
-
-				}
-			}
-			for (int i = 0; i < m; i++)
-			{
-				for (int j = 0; j < n; j++)
-				{
-					cout << *(a + i * n + j);
-				}
-				cout << endl;
-			}*/
 			while (!fin.eof())
 			{
 				str = "";
@@ -70,11 +53,27 @@ public:
 		case 2:
 		{
 			fin.open(path2);
+			string str;
+			while (!fin.eof())
+			{
+				str = "";
+				getline(fin, str);
+				cout << str << endl;
+			}
+			cin >> stop;
 			break;
 		}
 		case 3:
 		{
 			fin.open(path3);
+			string str;
+			while (!fin.eof())
+			{
+				str = "";
+				getline(fin, str);
+				cout << str << endl;
+			}
+			cin >> stop;
 			break;
 		}
 		default:

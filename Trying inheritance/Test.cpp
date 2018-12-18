@@ -6,6 +6,18 @@ using namespace std;
 
 int main()
 {
+	HWND hwnd;
+	char Title[1024];
+	int iWidth = GetSystemMetrics(SM_CXSCREEN);  // разрешение экрана по горизонтали
+	int iHeight = GetSystemMetrics(SM_CYSCREEN); // разрешение экрана по вертикали
+	GetConsoleTitle(Title, 1024); // Узнаем имя окна
+	// или GetModuleFileName(NULL,Title, sizeof(Title));
+	hwnd = FindWindow(NULL, Title); // Узнаем hwnd окна
+	ShowWindow(hwnd, SW_SHOWMAXIMIZED);
+	// или
+	//  MoveWindow(hwnd,0,0,iWidth,iHeight,true);
+
+
 	Enemy *training; 
 	Ninja en(20,20,10,0); 
 	training = &en; 
