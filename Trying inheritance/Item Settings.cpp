@@ -22,8 +22,8 @@
 #define w_knife_price 100
 #define a_revolver 0
 #define a_rifle 0
-#define a_revolver_type 1
-#define a_rifle_type 2
+#define a_revolver_type 0
+#define a_rifle_type 1
 #define a_revolver_price 5
 #define a_rifle_price 10
 #define whiskey_spirt_procent 50
@@ -90,7 +90,7 @@ Heal_items::~Heal_items() {}
 
 std::ostream & operator << (std::ostream & out, const Heal_items & ptr)
 {
-	out << "Item name -> " << ptr.Name << std :: endl << "Item price -> " << ptr.price << std::endl << "HP regen " << ptr.heal_value << std::endl << "Time use (sec)" << ptr.time_usage << std::endl;
+	out << "Item name -> " << ptr.Name << std :: endl << "Item price -> " << ptr.price << std::endl << "Number -> " << ptr.number << std::endl << "HP regen " << ptr.heal_value << std::endl << "Time use (sec)" << ptr.time_usage << std::endl;
 	return out; 
 }
 
@@ -142,15 +142,20 @@ Weapon::Weapon(std::string nm, double dmg, short int amm,int p)
 {
 	Name = nm; 
 	additional_dmg = dmg; 
-	ammo_type = 0; 
+	ammo_type = amm; 
 	price = p; 
 }
 
 Weapon::~Weapon() {}
 
-double Weapon:: dmg_add()
+double Weapon:: dmg_add () const
 {
 	return additional_dmg; 
+}
+
+short int Weapon::get_ammo_type()
+{
+	return ammo_type; 
 }
 
 std::ostream & operator << (std::ostream & out, const Weapon & ptr)
@@ -189,6 +194,11 @@ void Ammo::ammo_add()
 void Ammo::ammo_minus()
 {
 	number--; 
+}
+
+int Ammo::get_number() const
+{
+	return number; 
 }
 
 std::ostream & operator << (std::ostream & out, const Ammo & ptr)

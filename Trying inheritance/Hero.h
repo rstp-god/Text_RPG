@@ -41,5 +41,6 @@ public:
 	void equipment_ammo_show(); 
 	void equipment_alcohol_show(); 
 	void equipment_food_show(); 
+	void fill(); 
 	int get_hp(); 
 };

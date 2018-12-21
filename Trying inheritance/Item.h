@@ -66,6 +66,38 @@ public:
 	~Tincute();
 };
 
+//ammo 
+
+class Ammo :public Item
+{
+	std::string Name;
+	int number;
+	short int type;
+	int price;
+public:
+	Ammo() {};
+	Ammo(std::string, int, short int, int);
+	~Ammo();
+	int get_number() const; 
+	void ammo_add();
+	void ammo_minus();
+	friend std::ostream & operator << (std::ostream &, const Ammo &);
+};
+
+class Revolver_ammo :public Ammo
+{
+public:
+	Revolver_ammo();
+	~Revolver_ammo();
+};
+
+class Rifle_ammo : public Ammo
+{
+public:
+	Rifle_ammo();
+	~Rifle_ammo();
+};
+
 
 //weapon 
 
@@ -79,7 +111,8 @@ public:
 	Weapon() {}
 	Weapon(std::string, double, short int,int);
 	~Weapon();
-	double dmg_add(); 
+	short int get_ammo_type(); 
+	double dmg_add() const; 
 	friend std::ostream & operator << (std::ostream &, const Weapon &);
 };
 
@@ -97,43 +130,13 @@ public:
 	~Rifle();
 };
 
-class Knife :public Weapon 
+class Knife : public Weapon
 {
-public:
-	Knife();
+public: 
+	Knife(); 
 	~Knife();
 };
 
-//ammo 
-
-class Ammo :public Item
-{
-	std::string Name;
-	int number;
-	short int type;
-	int price; 
-public:
-	Ammo() {}; 
-	Ammo (std ::string,int,short int,int);
-	~Ammo ();
-	void ammo_add(); 
-	void ammo_minus(); 
-	friend std::ostream & operator << (std::ostream &, const Ammo &);
-};
-
-class Revolver_ammo :public Ammo 
-{
-public:
-	Revolver_ammo();
-	~Revolver_ammo();
-};
-
-class Rifle_ammo : public Ammo 
-{
-public:
-	Rifle_ammo();
-	~Rifle_ammo();
-};
 
 //sleep
 

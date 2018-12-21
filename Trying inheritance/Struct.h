@@ -2,7 +2,7 @@
 #pragma once
 #define number_of_heal_items 3
 #define number_of_weapons 3
-#define number_type_of_ammo 2
+#define number_type_of_ammo 3
 #define number_type_of_alcohol 3
 #define number_type_of_food 9
 

@@ -1,5 +1,6 @@
 #include "Hero.h"
 #include <string>
+#include <Windows.h>
 #include <iostream>
 
 #define hp 100
@@ -74,9 +75,9 @@ void Hero::equipment_fill()
 	main_eq.eq2[2] = w3;
 	//fill Ammo mas
 	Revolver_ammo a1; 
-	Rifle_ammo a2; 
+	Rifle_ammo a2;
 	main_eq.eq3[0] = a1; 
-	main_eq.eq3[1] = a2;
+	main_eq.eq3[1] = a2; 
 	//fill Alcohol mas
 	Whiskey al1; 
 	Tequila al2; 
@@ -151,8 +152,9 @@ void Hero:: equipment_heal_show()
 	{
 		std::cout << i << ")" << std::endl;
 		std::cout << main_eq.eq1[i];
-		std::cout << std::endl;
+		std::cout << "Press " << i << " to use" << std::endl;
 	}
+	std::cout << "Press 9 to exit" << std::endl;
 }
 void Hero::equipment_weapon_show()
 {
@@ -181,8 +183,9 @@ void Hero::equipment_alcohol_show()
 	{
 		std::cout << i << ")" << std::endl;
 		std::cout << main_eq.eq4[i];
-		std::cout << std::endl;
+		std::cout << "Press " << i << " to use" << std::endl;
 	}
+	std::cout << "Press 9 to exit" << std::endl;
 }
 void Hero::equipment_food_show()
 {
@@ -191,8 +194,14 @@ void Hero::equipment_food_show()
 	{
 		std::cout << i << ")" << std::endl;
 		std::cout << main_eq.eq5[i];
-		std::cout << std::endl;
+		std::cout << "Press " << i << " to use" << std::endl;
 	}
+	std::cout << "Press 9 to exit" << std::endl;
+}
+
+void Hero::sleep(double factor , double hours)
+{
+	Sleep((hours / factor) * 1000); 
 }
 
 double Hero::attack(double dmg) const
@@ -245,4 +254,35 @@ int Hero::get_hp()
 	return HP; 
 }
 
-
+void Hero::fill()
+{
+	int i=0;
+	while (i <= 20) //заполнение хилки 
+	{
+		main_eq.eq1[0].add(); 
+		main_eq.eq1[1].add(); 
+		main_eq.eq1[2].add(); 
+		i++; 
+	}
+	i = 0; 
+	while (i <= 20) //заполнение патронов 
+	{
+		main_eq.eq3[0].ammo_add();
+		main_eq.eq3[1].ammo_add();
+		i++; 
+	}
+	i = 0; 
+	while (i <= 5)
+	{
+		main_eq.eq5[0].food_add(); 
+		main_eq.eq5[1].food_add();
+		main_eq.eq5[2].food_add();
+		main_eq.eq5[3].food_add();
+		main_eq.eq5[4].food_add();
+		main_eq.eq5[5].food_add();
+		main_eq.eq5[6].food_add();
+		main_eq.eq5[7].food_add();
+		main_eq.eq5[8].food_add();
+		i++; 
+	}
+}
