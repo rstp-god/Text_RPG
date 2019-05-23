@@ -16,7 +16,7 @@ private:
 	bool Partner;
 	Reputation gamer; 
 	Quest quests[number_quests]; 
-	//Characteristic hero_ch;  
+	Characteristic hero_ch;  
 	//Profession
 public:
 	Equipment main_eq;

@@ -15,7 +15,7 @@ int main()
 	hwnd = FindWindow(NULL, Title); // Узнаем hwnd окна
 	ShowWindow(hwnd, SW_SHOWMAXIMIZED);
 	// или
-	//  MoveWindow(hwnd,0,0,iWidth,iHeight,true);
+	// MoveWindow(hwnd,0,0,iWidth,iHeight,true);
 
 
 	Enemy *training; 
@@ -34,8 +34,9 @@ start:
 		cout << "1)Open Equipment" << endl;
 		cout << "2)map see" << endl;
 		cout << "3)Fight w8 ninja!" << endl;
-		cout << "4)test test test" << endl; 
-		cout << "5)Exit game!" << endl; 
+		cout << "4)Info about player" << endl; 
+		cout << "5)Update characteristic" << endl; 
+		cout << "6)Exit game!" << endl; 
 		cin >> mainmenuchoise;
 		system("cls");
 		switch (mainmenuchoise)
@@ -205,8 +206,14 @@ start:
 			}
 			break;
 		case 4: 
+			gamer.print_info(); 
+			goto mainmenu;
 			break; 
 		case 5: 
+			gamer.characteristic_up(); 
+			goto mainmenu;
+			break;
+		case 6: 
 			cout << "Cya!" << endl; 
 			return 0; 
 			break; 

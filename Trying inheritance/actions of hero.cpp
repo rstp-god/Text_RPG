@@ -11,6 +11,10 @@
 #define y 20  //coordinate 
 #define partner false
 #define value 15
+#define acc_procent_default 50 
+#define head_procent_default 25
+#define hp_heal_default 10 
+#define eloquence_default 30
 
 Hero::Hero(std :: string name)
 {
@@ -23,6 +27,10 @@ Hero::Hero(std :: string name)
 	coordinate[1] = y; 
 	Value_attack = value; 
 	Partner = partner; 
+	hero_ch.acc_procent = acc_procent_default; 
+	hero_ch.head_procent = head_procent_default; 
+	hero_ch.hp_heal = hp_heal_default; 
+	hero_ch.eloquence = eloquence_default;
 	gamer.law = 0; 
 	gamer.Karma = 0; 
 	gamer.rogue_respect = 0;
@@ -47,7 +55,12 @@ void Hero::print_info() const
 		<< "Reputation :" << std::endl
 		<< "     a)Law " << gamer.law << std::endl
 		<< "     b)Karma " << gamer.Karma << std::endl
-		<< "     c)Rogue " << gamer.rogue_respect << std::endl; 
+		<< "     c)Rogue " << gamer.rogue_respect << std::endl
+		<< "Characteristic :" << std::endl
+		<< "     1)Acc Procent " << hero_ch.acc_procent << std::endl
+		<< "     2)Head Procent " << hero_ch.head_procent << std::endl
+		<< "     3)HP Heal " << hero_ch.hp_heal << std::endl
+		<< "     4)Eloquence " << hero_ch.eloquence << std::endl; 
 	for (int i = 0; i < number_quests; i++)
 	{
 	std::cout << i << " quest" << std::endl
@@ -284,5 +297,31 @@ void Hero::fill()
 		main_eq.eq5[7].food_add();
 		main_eq.eq5[8].food_add();
 		i++; 
+	}
+}
+
+// todo: проверка по значению не может быть бесконечным
+void Hero::characteristic_up ()
+{
+	std::cout << "1) Up acc" << std :: endl; 
+	std::cout << "2) Up head" << std::endl;
+	std::cout << "3) Up hp" << std::endl;
+	std::cout << "4) Up eloquence" << std::endl;
+	int choise; 
+	std::cin >> choise; 
+	switch (choise)
+	{
+	case 1: 
+		hero_ch.acc_procent++; 
+		break; 
+	case 2:
+		hero_ch.head_procent++; 
+		break;
+	case 3:
+		hero_ch.hp_heal++; 
+		break; 
+	case 4:
+		hero_ch.eloquence++; 
+		break; 
 	}
 }
